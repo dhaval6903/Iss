@@ -1,0 +1,25 @@
+.model-head{
+    border-bottom: 1px solid #00000057;
+    padding: 5px 20px;
+    background: #c0c0c04d;
+}
+
+
+
+.alert {
+    position: relative; /* Ensure positioning context for absolute centering */
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .alert-info {
+    background-color: #d1ecf1; /* Adjust background color as needed */
+    color: #0c5460; /* Adjust text color as needed */
+    border-color: #bee5eb; /* Adjust border color as needed */
+  }
+  

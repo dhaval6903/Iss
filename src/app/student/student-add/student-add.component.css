@@ -1,0 +1,55 @@
+.model-head{
+    border-bottom: 1px solid #00000057;
+    padding: 5px 20px;
+    background: #c0c0c04d;
+}
+
+/* Style the input group to make it look better */
+.input-group {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 10px; /* Adjust position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .password-toggle i {
+    font-size: 1.2rem;
+  }
+  
+  .password-toggle:hover {
+    color: rgb(0, 106, 255); /* Change hover color to orange */
+  }
+  
+  .form-control {
+    padding-right: 40px; /* Ensure space for the icon */
+  }
+  
+
+  .alert {
+    position: relative; /* Ensure positioning context for absolute centering */
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .alert-info {
+    background-color: #d1ecf1; /* Adjust background color as needed */
+    color: #0c5460; /* Adjust text color as needed */
+    border-color: #bee5eb; /* Adjust border color as needed */
+  }
+  

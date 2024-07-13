@@ -1,0 +1,194 @@
+
+<nav class="sidebar">
+  <div class="logo d-flex justify-content-between">
+    <div class="logo-bar d-flex align-items-center">
+      <img src="./assets/img/INVISION.png" class="leftbar-logo" id="logo1" *ngIf="!isCollapsed" />
+      <img src="./assets/img/isslo2.png" style="width: 60px; height: 60px;" class="leftbar-logo" id="logo2" *ngIf="isCollapsed" />
+      <div class="title" *ngIf="!isCollapsed">
+        <h6 class="rainbow-text">INVISION SOFTWARE SOLUTIONS</h6>
+      </div>
+    </div>
+    <div class="sidebar_close_icon d-lg-none">
+      <i class="ti-close"></i>
+    </div>
+  </div>
+  
+  <ul id="sidebar_menu">
+    <li>
+      <a href="/Home" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-home" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Home</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/employee/employee-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-id-badge" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Employee</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/project/project-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-blackboard" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Project</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/project/projectpayment-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="fas fa-rupee-sign" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Project Payment</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/student/student-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="fas fa-book-reader" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Student</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/fees/fees-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-receipt" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Fees</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/officenotes/officenotes-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="far fa-edit" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Office Notes</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/wallet/wallet-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-wallet" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Wallet</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/cost/cost-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="fas fa-coins" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Cost</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/attendance/attendance-view" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-marker-alt" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Attendance</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/client/client-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-user" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Client</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/salary/salary-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="far fa-credit-card" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Salary</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/task/task-list" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-target" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Task</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/task/task-update" aria-expanded="false">
+        <div class="nav_icon_small">
+          <i class="ti-write" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Task Update</span>
+        </div>
+      </a>
+    </li>
+   <!-- <li class="has-submenu" style="cursor: pointer;">
+      <a class="has-arrow" (click)="toggleSubMenu('Reports')">
+        <div class="nav_icon_small">
+          <i class="ti-clipboard" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Reports</span>
+        </div>
+      </a>
+      <ul class="submenu" *ngIf="subMenuState['Reports']">
+        <li><a href="/">Report</a></li>
+       
+        
+        <li><a href="/Traveling/Income">Traveling Income</a></li>
+        <li><a href="/Closing/Sale">Closing sale</a></li>
+        <li><a href="/Rank/History">Rank History</a></li>
+      
+      </ul>
+    </li>-->
+    <li>
+      <a (click)="logout();" style="cursor: pointer;">
+        <div class="nav_icon_small">
+          <i class="ti-share-alt" alt></i>
+        </div>
+        <div class="nav_title">
+          <span>Logout</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <!--
+  <div class="toggle" (click)="toggleSidebar()">
+    <label class="form-label switch_toggle d-none d-lg-block" for="checkbox">
+      <input type="checkbox" id="checkbox" [checked]="isCollapsed">
+      <div class="slider round open_miniSide"></div>
+    </label>
+  </div>-->
+</nav>

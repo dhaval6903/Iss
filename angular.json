@@ -35,9 +35,75 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "src/assets/css/bootstrap1.min.css",
+              "src/assets/vendors/themefy_icon/themify-icons.css",
+              "src/assets/vendors/niceselect/css/nice-select.css",
+              "src/assets/vendors/owl_carousel/css/owl.carousel.css",
+              "src/assets/vendors/gijgo/gijgo.min.css",
+              "src/assets/vendors/font_awesome/css/all.min.css",
+              "src/assets/vendors/tagsinput/tagsinput.css",
+              "src/assets/vendors/datepicker/date-picker.css",
+              "src/assets/vendors/vectormap-home/vectormap-2.0.2.css",
+              "src/assets/vendors/scroll/scrollable.css",
+              "src/assets/vendors/datatable/css/jquery.dataTables.min.css",
+              "src/assets/vendors/datatable/css/responsive.dataTables.min.css",
+              "src/assets/vendors/datatable/css/buttons.dataTables.min.css",
+              "src/assets/vendors/text_editor/summernote-bs4.css",
+              "src/assets/vendors/morris/morris.css",
+              "src/assets/vendors/material_icon/material-icons.css",
+              "src/assets/css/metisMenu.css",
+              "src/assets/css/style1.css",
+              "src/assets/css/colors/default.css",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/jquery1-3.4.1.min.js",
+              "src/assets/js/popper1.min.js",
+              "src/assets/js/bootstrap1.min.js",
+              "src/assets/js/metisMenu.js",
+              "src/assets/vendors/count_up/jquery.waypoints.min.js",
+              "src/assets/vendors/chartlist/Chart.min.js",
+              "src/assets/vendors/count_up/jquery.counterup.min.js",
+              "src/assets/vendors/niceselect/js/jquery.nice-select.min.js",
+              "src/assets/vendors/owl_carousel/js/owl.carousel.min.js",
+              "src/assets/vendors/datatable/js/jquery.dataTables.min.js",
+              "src/assets/vendors/datatable/js/dataTables.responsive.min.js",
+              "src/assets/vendors/datatable/js/dataTables.buttons.min.js",
+              "src/assets/vendors/datatable/js/buttons.flash.min.js",
+              "src/assets/vendors/datatable/js/jszip.min.js",
+              "src/assets/vendors/datatable/js/pdfmake.min.js",
+              "src/assets/vendors/datatable/js/vfs_fonts.js",
+              "src/assets/vendors/datatable/js/buttons.html5.min.js",
+              "src/assets/vendors/datatable/js/buttons.print.min.js",
+              "src/assets/vendors/datepicker/datepicker.js",
+              "src/assets/vendors/datepicker/datepicker.en.js",
+              "src/assets/vendors/datepicker/datepicker.custom.js",
+              "src/assets/js/chart.min.js",
+              "src/assets/vendors/chartjs/roundedBar.min.js",
+              "src/assets/vendors/progressbar/jquery.barfiller.js",
+              "src/assets/vendors/tagsinput/tagsinput.js",
+              "src/assets/vendors/text_editor/summernote-bs4.js",
+              "src/assets/vendors/am_chart/amcharts.js",
+              "src/assets/vendors/scroll/perfect-scrollbar.min.js",
+              "src/assets/vendors/scroll/scrollable-custom.js",
+              "src/assets/vendors/vectormap-home/vectormap-2.0.2.min.js",
+              "src/assets/vendors/vectormap-home/vectormap-world-mill-en.js",
+              "src/assets/vendors/apex_chart/apex-chart2.js",
+              "src/assets/vendors/apex_chart/apex_dashboard.js",
+              "src/assets/vendors/echart/echarts.min.js",
+              "src/assets/vendors/chart_am/core.js",
+              "src/assets/vendors/chart_am/charts.js",
+              "src/assets/vendors/chart_am/animated.js",
+              "src/assets/vendors/chart_am/kelly.js",
+              "src/assets/vendors/chart_am/chart-custom.js",
+              "src/assets/js/dashboard_init.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/select2.full.min.js"
+              
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -49,8 +115,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "15mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -63,7 +129,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -106,5 +178,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a221e242-e7c3-4793-8db6-ef0dee3ab7d8"
   }
 }

@@ -1,0 +1,47 @@
+<div class="col-lg-12">
+    <div class="white_card card_height_100 mb_30">
+      <div class="white_card_header">
+        <div class="box_header m-0">
+          <div class="main-title table-btn">
+                   <h3 class="m-0">Edit Attendance Details</h3>
+               </div>
+               <span class="close-button" (click)="closeModal()" style="font-size: 30px; cursor: pointer;">&times;</span>
+           </div>
+       </div>
+
+       <div class="white_card_body">
+           <div class="card-body">
+            <form #formRef="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="a_attendancestatus">Status</label>
+                      <select class="form-control" name="a_attendancestatus" id="a_attendancestatus" [(ngModel)]="a_attendancestatus">
+                        <option value="">--- Select Type ---</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Present">Present</option>
+                        <option value="Leave">Leave</option>
+                        <option value="Half Leave">Half Leave</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="row mb-3">   
+                  <div class="col-md-12">
+                    <label class="form-label" for="a_remark">Remark</label>
+                    <textarea class="form-control" name="a_remark" [(ngModel)]="a_remark" placeholder="Enter Remarks Here"></textarea>
+                </div>
+                 </div>       
+                   <div class="mt-3">
+                   <button type="submit" [disabled]="btndisable" class="btn btn-primary">Edit Attendance</button>
+                   <div *ngIf="btndisable" class="alert alert-info mt-2 text-center">
+                    <div class="align-items-center">
+                      <span>Wait for response...</span>
+                    </div>
+                  </div>
+                </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12"></div>

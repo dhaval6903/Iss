@@ -1,0 +1,65 @@
+<div class="col-lg-12">
+    <div class="white_card card_height_100 mb_30">
+       <div class="white_card_header">
+          <div class="box_header m-0">
+             <div class="main-title table-btn">
+                <h3 class="m-0">{{lable}} Client Details</h3>
+            </div>
+            <span class="close-button" (click)="closeModal()" style="font-size: 30px; cursor: pointer;">&times;</span>
+          </div>
+       </div>
+
+       <div class="white_card_body">
+          <div class="card-body">
+            <form #formRef="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <div class="row mb-3">
+                   <div class="col-md-6">
+                      <label class="form-label" for="inputName">Client Name</label>
+                      <input type="text" class="form-control" name="cl_name" id="cl_name" [(ngModel)]="cl_name" placeholder="Enter Client Name">
+                   </div>
+                   <div class="col-md-6">
+                      <label class="form-label" for="inputClientbusiness">Client Business</label>
+                      <input type="text" class="form-control" name="cl_business" id="cl_business" [(ngModel)]="cl_business"  placeholder="Enter Client Business">
+                   </div>
+                </div>
+                <div class="row mb-3">
+                   <div class="col-md-6">
+                      <label class="form-label" for="inputEmail">Email</label>
+                      <input type="email" class="form-control" name="cl_email" id="cl_email" [(ngModel)]="cl_email"  placeholder="Enter Client Email">
+                   </div>
+                   <div class="col-md-6">
+                      <label class="form-label" for="inputPhone">Phone</label>
+                      <input type="text" class="form-control" name="cl_phone" id="cl_phone" [(ngModel)]="cl_phone"  placeholder="Enter Client Phone">
+                   </div>
+                </div>
+                <div class="row mb-3">
+                   <div class="col-md-6">
+                     <label class="form-label" for="inputAddress">Address</label>
+                     <textarea class="form-control" name="cl_address" id="cl_address" [(ngModel)]="cl_address" placeholder="Enter Address"></textarea>
+                   </div>
+                   <div class="col-md-6">
+                      <label class="form-label" for="inputStatus">Status</label>
+                      <select class="form-control" name="cl_status" id="cl_status" [(ngModel)]="cl_status">
+                         <option value="">--- Select Status ---</option>
+                         <option value="Active">Active</option>
+                         <option value="Deactive">Deactive</option>
+                      </select>
+                   </div>
+                </div>
+                <div class="mt-3">
+                <button type="submit" [disabled]="btndisable" class="btn btn-primary">{{lable}} Client</button>
+                <div *ngIf="btndisable" class="alert alert-info mt-2 text-center">
+                    <div class="align-items-center">
+                      <span>Wait for response...</span>
+                    </div>
+                  </div>
+               </div>
+             </form>
+          </div>
+       </div>
+
+    </div>
+ </div>
+
+ <div class="col-12"></div>
+

@@ -1,0 +1,121 @@
+<div class="col-lg-12">
+    <div class="white_card card_height_100 mb_30">
+      <div class="white_card_header">
+        <div class="box_header m-0">
+          <div class="main-title table-btn">
+                   <h3 class="m-0">{{lable}} Fees Details</h3>
+               </div>
+               <span class="close-button" (click)="closeModal()" style="font-size: 30px; cursor: pointer;">&times;</span>
+           </div>
+       </div>
+
+       <div class="white_card_body">
+           <div class="card-body">
+            <form #formRef="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                  
+                <div class="row mb-3">
+                 <div class="col-md-6">
+                        <label class="form-label" for="std_name">Student</label>&nbsp;
+                        <span class="badge bg-success">
+                            Remaining Fees: ₹ {{ remainingFees }}
+                        </span>
+                        <!--<select class="form-control" [(ngModel)]="std_name" name="std_name" (change)="onStudentChange()" [disabled]="isEdit">
+                            <option value="">--- Select Student ---</option>
+                            <option *ngFor="let row of BindData" [value]="row.std_id">{{ row.std_name }} | {{row.std_year}}</option>
+                        </select>-->
+                        <ng-select2 #select2 [placeholder]="'Select Project Name'"
+                                 class="form-control-select" id="std_name" name="std_name"
+                                 [data]="exampleData1" [(ngModel)]="std_name"
+                                  [options]="options" (change)="onStudentChange()">
+                             </ng-select2>
+                    </div>
+
+                   <!-- <div class="col-md-6">
+                        <label class="form-label" for="std_name">Student</label>&nbsp;
+                        <span class="badge bg-success">
+                          Remaining Fees: ₹ {{ remainingFees }}
+                        </span>
+                        <ng-select 
+                          [items]="BindData" 
+                          bindLabel="std_name" 
+                          bindValue="std_id" 
+                          [(ngModel)]="std_name" 
+                          name="std_name" 
+                          (change)="onStudentChange()" 
+                          [searchable]="true"
+                          [disabled]="isEdit">
+                        </ng-select>
+                      </div>-->
+
+                     <!-- <div class="col-md-6">
+                        <label class="form-label" for="std_name">Student</label>&nbsp;
+                        <span class="badge bg-success">
+                          Remaining Fees: ₹ {{ remainingFees }}
+                        </span>
+                        <ng-select 
+                          [items]="BindData" 
+                          bindLabel="std_nameWithYear" 
+                          bindValue="std_id" 
+                          [(ngModel)]="std_name" 
+                          name="std_name" 
+                          (change)="onStudentChange()" 
+                          [searchable]="true"
+                          [disabled]="isEdit"
+                          class="custom-ng-select">
+                          <ng-template ng-option-tmp let-item="item">
+                            {{ item.std_name }} | {{ item.std_year }}
+                          </ng-template>
+                        </ng-select>
+                      </div>-->
+                       <div class="col-md-6">
+                           <label class="form-label" for="f_fees">Fees</label>
+                           <input type="text" class="form-control" name="f_fees" [(ngModel)]="f_fees" placeholder="Enter Fees ">
+                       </div>
+                   </div>
+
+                   <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="f_date">Fees Date:</label>
+                        <input type="date" class="form-control" name="f_date" id="f_date" [(ngModel)]="f_date" placeholder="Fees Date">
+                    </div>
+                   <div class="col-md-6">
+                    <label class="form-label" for="f_mode">Fees Mode</label>
+                    <select class="form-control" [(ngModel)]="f_mode" name="f_mode">
+                        <option value="">--- Select FeesMode ---</option>
+                        <option value="CASH">CASH</option>
+                              <option value="ONLINE">ONLINE</option>
+                              <option value="NEFT">NEFT</option>
+                              <option value="UPI">UPI</option>
+                              <option value="JCOM">JCOM</option>
+                              <option value="IMPS">IMPS</option>
+                              <option value="OTHER">OTHER</option>
+                    </select>
+                    </div>
+                 </div>
+
+                   
+
+                   
+                   <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label class="form-label" for="f_remark">Remark</label>
+                        <textarea class="form-control" name="f_remark" [(ngModel)]="f_remark" placeholder="Enter Remark Here"></textarea>
+                    </div>
+
+                   </div>
+                
+                   <div class="mt-3">
+                   <button type="submit" [disabled]="btndisable" class="btn btn-primary">{{lable}} Fees</button>
+                   <div *ngIf="btndisable" class="alert alert-info mt-2 text-center">
+                    <div class="align-items-center">
+                      <span>Wait for response...</span>
+                    </div>
+                  </div>
+                </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12"></div>

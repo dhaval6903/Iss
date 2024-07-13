@@ -1,0 +1,76 @@
+.model-head{
+    border-bottom: 1px solid #00000057;
+    padding: 5px 20px;
+    background: #c0c0c04d;
+}
+
+
+
+.alert {
+    position: relative; /* Ensure positioning context for absolute centering */
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .alert-info {
+    background-color: #d1ecf1; /* Adjust background color as needed */
+    color: #0c5460; /* Adjust text color as needed */
+    border-color: #bee5eb; /* Adjust border color as needed */
+  }
+/*   
+
+
+  ::ng-deep ng-select.custom-ng-select {
+    width: 100%;
+    display: block;
+}
+
+::ng-deep ng-select.custom-ng-select .ng-select-container {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+::ng-deep ng-select.custom-ng-select .ng-select-container.ng-has-value,
+::ng-deep ng-select.custom-ng-select .ng-select-container.ng-select-focused {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+::ng-deep ng-select.custom-ng-select .ng-dropdown-panel {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 30px); 
+    left: 15px; 
+    margin-top: 5px;
+}
+
+::ng-deep ng-select.custom-ng-select .ng-dropdown-panel .ng-select-search {
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    margin-bottom: 5px;
+}
+
+::ng-deep ng-select.custom-ng-select .ng-dropdown-panel .ng-option {
+    padding: 3px 5px; 
+    transition: background 0.2s ease-in-out;
+}
+
+::ng-deep ng-select.custom-ng-select .ng-dropdown-panel .ng-option:hover {
+    background: #3f6ad8;
+    color: white;
+}
+
+::ng-deep ng-select.custom-ng-select .ng-dropdown-panel .ng-option.ng-option-selected {
+    background: #3f6ad8;
+    color: white;
+} */

@@ -1,0 +1,87 @@
+<app-leftbar></app-leftbar>
+<section class="main_content dashboard_part large_header_bg">
+   <div class="main_content_iner">
+      <div class="container-fluid p-0">
+         <div class="row justify-content-center">
+            <div class="col-lg-12">
+               <div class="white_card card_height_100 mb_30">
+                  <div class="white_card_header">
+                     <div class="d-flex justify-content-between align-items-center">
+                        <div class="main-title">
+                           <h5>Client Details</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" (click)="openAddClientForm()">Add Client</button>
+
+                        </div>
+                     </div>
+                  </div>
+                  <div class="white_card_body">
+                     <div class="QA_section">
+                        <div class="QA_table mb_30">
+                           <table class="table" id="table_data">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Business</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Created Date</th>
+                                    <th scope="col">Updated Date</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <!-- Placeholder data for now, replace with actual data -->
+                                 <tr *ngFor="let row of BindData; let i = index">
+                                    <td>
+                                       <div class="btn-group">
+                                       <button type="button" title="Edit" class="btn btn-primary btn-sm me-2" (click)="EditClient(row.cl_id)">
+                                          <i class="ti-pencil"></i> 
+                                      </button>
+                                        <button type="button" (click)="ClientDelete(row.cl_id)" title="Delete" class="btn btn-danger btn-sm me-2">
+                                            <i class="ti-trash"></i> 
+                                        </button>
+                                       </div>
+                                    </td>
+                                    <td>{{ i + 1 }}</td>
+                                   <td>{{ row.cl_name }}</td>
+                                   <td>{{ row.cl_business }}</td>
+                                   <td>{{ row.cl_email }}</td>
+                                   <td>{{ row.cl_phone }}</td>
+                                   <td>{{ row.cl_address }}</td>
+                                   <td><span [ngClass]="{'badge bg-success': row.cl_status === 'Active', 'badge bg-danger': row.cl_status !== 'Active', 'badge': true}">{{row.cl_status}}</span></td>
+                                   <td>{{ row.cl_cdate }}</td>
+                                   <td>{{ row.cl_udate }}</td>
+                                 </tr>
+                                 <tr *ngIf="NodataLable">
+                                    <td colspan="10"><span class="NodataLable">No any data</span></td>
+                                 </tr>
+                                 <tr *ngIf="LoaderShow">
+                                    <td colspan="10">
+                                       <div class="loader--spinner theme_loder_1 mb_30">
+                                          <div></div> <div></div> <div></div>
+                                          <div></div> <div></div> <div></div>
+                                          <div></div> <div></div> <div></div>
+                                          <div></div> <div></div> <div></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12"></div>
+            </div>
+            </div>
+            </div>
+            
+            
+            <app-footer></app-footer>
+            </section>

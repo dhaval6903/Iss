@@ -1,0 +1,79 @@
+import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router'; // Import Router
+import { TaskAddComponent } from '../task-add/task-add.component';
+import Swal, { SweetAlertIcon, SweetAlertResult } from 'sweetalert2'; 
+
+
+@Component({
+  selector: 'app-task-list',
+  templateUrl: './task-list.component.html',
+  styleUrl: './task-list.component.css'
+})
+export class TaskListComponent {
+  
+  
+  
+  constructor(private modalService: NgbModal, private router: Router) { } // Inject Router
+
+  showAlert(title: string, text: string, icon: SweetAlertIcon): Promise<SweetAlertResult<any>> {
+    return Swal.fire({
+      title: title,
+      text: text,
+      icon: icon,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No!'
+    });
+  }
+
+  // Child functions that call the parent function
+  showAlert1(): void {
+    this.showAlert(
+      'Are you sure?',
+      'You want to Delete this Data!!!!',
+      'warning'
+    ).then((result: SweetAlertResult<any>) => {
+      console.log(result); // You can handle the result here
+      if (result.isConfirmed) {
+        this.router.navigate(['/Home']);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        this.router.navigate(['/task/task-list']);
+      }
+    });
+  }
+
+  showEditAlert(): void {
+    this.showAlert(
+      'Are you sure?',
+      'You want to Edit this Data!!!!',
+      'info'
+    ).then((result: SweetAlertResult<any>) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/Home']);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        this.router.navigate(['/task/task-list']);
+      }
+    });
+  }
+
+  openAddTaskForm(): void {
+    const modalRef = this.modalService.open(TaskAddComponent, { size: 'lg', backdrop: 'static', keyboard: false });
+    modalRef.result.then((result) => {
+      // Handle modal close event if needed
+      // For example, you may want to refresh the employee list after adding a new employee
+      this.refreshTaskList();
+    }, (reason) => {
+      // Handle modal dismiss event if needed
+    });
+  }
+
+  refreshTaskList(): void {
+    // Method to refresh the employee list after adding or editing an employee
+  }
+
+
+
+}

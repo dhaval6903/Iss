@@ -1,0 +1,113 @@
+
+.active span {
+    color: #773828 !important;
+    font-weight: bold;
+}
+.active a {
+    background: #fff4de !important;
+}
+
+/* Hover color for menu items */
+.sidebar #sidebar_menu>li a:hover {
+    background-color: #fff4de; /* Change background color on hover */
+}
+
+
+.sidebar #sidebar_menu>li a i {
+    font-size: 20px;
+    margin-right: 12px;
+    color: #000000;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.sidebar .logo {
+    margin: 0;
+    background: #fff4de;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+
+.sidebar {
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    padding-bottom: 50px;
+    position: fixed;
+    width: 285px;
+    z-index: 999;
+    overflow: hidden;
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(80, 143, 244, .1);
+    transition: .3s;
+}
+
+
+
+
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+  }
+  .submenu li {
+    margin: 5px 0;
+  }
+  
+
+
+
+  img, svg {
+    vertical-align: middle;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+}
+/* Existing styles for the toggle switch */
+.toggle {
+    width: fit-content;
+    position: absolute; /* Make it absolute */
+    bottom: 85px; /* Position it at the bottom of the sidebar */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it horizontally */
+}
+
+/* Adjust the color of the switch border */
+.toggle .slider.round.open_miniSide {
+    border-color: black; /* Border color of the switch */
+}
+
+/* Adjust the color of the round ball */
+.toggle .slider.round.open_miniSide:before {
+    background-color: black; /* Color of the round ball */
+}
+
+
+
+
+
+
+.title {
+    margin-left: 22px;
+    margin-top: 8px;
+}
+
+.rainbow-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background: linear-gradient(to right, rgb(230, 150, 1), rgb(88, 88, 216), rgb(230, 150, 1));
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.2px rgb(91, 7, 208); /* Adjust the stroke size and color as needed */
+  
+}
+
+
+
+.fa-rupee-sign:before {
+    content: "\f156";
+    margin-left: 4px;
+}

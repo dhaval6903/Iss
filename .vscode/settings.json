@@ -1,0 +1,25 @@
+{
+    "cSpell.words": [
+        "Leftbar"
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#7852d0",
+        "activityBar.background": "#7852d0",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#dd9d82",
+        "activityBarBadge.foreground": "#15202b",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#7852d0",
+        "statusBar.background": "#5c33bc",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#7852d0",
+        "statusBarItem.remoteBackground": "#5c33bc",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#5c33bc",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#5c33bc99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#5c33bc"
+}

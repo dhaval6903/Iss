@@ -1,0 +1,20 @@
+.social_media_card .media_card_body .media_card_list {
+    grid-template-columns: repeat(5, 1fr);
+}
+.single_media_card h3 {
+    color: #773929 !important;
+}
+.single_media_card span {
+    color: #a8c448 !important;
+    font-size: 15px !important;
+    letter-spacing: 1px;
+}
+.rounded-circle {
+    border-radius: 15% !important;
+}
+.custom-card .card-profile img {
+    background-color: #e1dada52;
+}
+.social_media_card .media_card_body .media_card_list .single_media_card h3 {
+    font-size: 20px;
+}
