@@ -114,7 +114,7 @@ export class EmployeeListComponent implements OnInit {
       }
       // setTimeout(() => {
       //   $(document).ready(() => {
-      //     $('#table_data').DataTable();
+      //     $('#closingsale_data').DataTable();
       //   });
       // }, 100);
     }, error => {
