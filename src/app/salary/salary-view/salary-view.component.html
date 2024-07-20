@@ -3,7 +3,7 @@
        <div class="white_card_header">
           <div class="d-flex justify-content-between align-items-center">
              <div class="main-title">
-                <h5>View Details</h5>
+                <h5>Attendance Details Of <b>{{ empfullname }} ({{ empcontact }})</b></h5>
              </div>
              <span class="close-button" (click)="closeModal()" style="font-size: 30px; cursor: pointer;">&times;</span>
 
@@ -15,6 +15,7 @@
                 <table class="table" id="table_data">
                    <thead>
                       <tr>
+                         <th scope="col">Map</th>
                          <th scope="col">Date</th>
                          <th scope="col">In Time</th>
                          <th scope="col">Out Time</th>
@@ -25,6 +26,13 @@
                    <tbody>
                       <!-- Placeholder data for now, replace with actual data -->
                       <tr *ngFor="let row of BindData;">
+                        <td>
+                            <div class="btn-group">
+                                  <button type="button" (click)="Map(row.att_latitudeIN, row.att_longitudeIN, row.att_latitudeOUT, row.att_longitudeOUT)" title="View Map" class="btn btn-info btn-sm me-2">
+                                    <i class="ti-map-alt"></i> 
+                                  </button>   
+                              </div>
+                          </td>
                         <td>{{row.att_date | date: 'dd-MM-yyyy'}} <br/> <span class="badge bg-success"> {{row.att_day}}</span></td>
                         <td>{{ row.att_in }}</td>
                         <td>{{ row.att_out }}</td>

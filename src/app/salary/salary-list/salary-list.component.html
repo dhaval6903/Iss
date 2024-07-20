@@ -28,13 +28,21 @@
                                <option *ngFor="let row of MonthData" [value]="row.monthYear">{{ row.monthYear }}</option>
                            </select>
                         </div>
-                        <div class="col-md-2 d-flex align-items-end">
-                           <button class="btn btn-primary me-2" (click)="SearchData()" title="search Data"><i class="ti-search"></i></button>
-                           <button *ngIf="dateChanged" class="btn btn-warning me-2" (click)="clearData()" title="Clear Data"><i class="ti-reload"></i></button>
-                        </div>
+                        <div class="col-md-4 d-flex align-items-end" style="justify-content: space-between;">
+                           <div>
+                             <button class="btn btn-primary me-2" (click)="SearchData()" [disabled]="!isSearchButtonEnabled() || isButtonsDisabled" title="search Data">
+                               <i class="ti-search"></i>
+                             </button>
+                             <button *ngIf="dateChanged && showTable" class="btn btn-warning me-2" (click)="clearData()" [disabled]="isButtonsDisabled" title="Clear Data">
+                               <i class="ti-reload"></i>
+                             </button>
+                           </div>
+                           <button *ngIf="showTable" class="btn btn-info me-2" (click)="saveSalary()" title="Save Salary">Save</button>
+                         </div>
+                         
                      </div>
                   </div>
-                  <div class="white_card_body">
+                  <div class="white_card_body" *ngIf="showTable">
                      <div class="QA_section">
                         <div class="QA_table mb_30">
                            <table class="table" id="table_data">
@@ -48,7 +56,7 @@
                                     <th scope="col">Leave Day</th>
                                     <th scope="col">Half Day</th>
                                     <th scope="col">Pay Days</th>
-                                    <th scope="col">Salary</th>
+                                    <th scope="col">Salary(₹)</th>
                                  </tr>
                               </thead>
                               <tbody>
@@ -57,7 +65,7 @@
                                     <td>
                                      <div class="btn-group">
                                        <button type="button" title="View" class="btn btn-success btn-sm me-2" (click)="View(row.att_empid,row.att_monthyear)">
-                                          <i class="ti-info"></i>
+                                          <i class="ti-eye"></i>
                                         </button>
                                            
                                        </div>
@@ -72,10 +80,10 @@
                                    <td><strong>{{ row.Salary }}</strong></td>
                                  </tr>
                                  <tr *ngIf="NodataLable">
-                                    <td colspan="10"><span class="NodataLable">No any data</span></td>
+                                    <td colspan="9"><span class="NodataLable">No any data</span></td>
                                  </tr>
                                  <tr *ngIf="LoaderShow">
-                                    <td colspan="10">
+                                    <td colspan="9">
                                        <div class="loader--spinner theme_loder_1 mb_30">
                                           <div></div> <div></div> <div></div>
                                           <div></div> <div></div> <div></div>
@@ -87,9 +95,8 @@
                               </tbody>
                               <tfoot>
                                  <tr>
-                                 <th colspan="8" scope="col" style="text-align: center; border: 1px solid #dfe2e5 !important;">Total</th>
-                                 <th colspan="1" scope="col" style="text-align: center; border: 1px solid #dfe2e5 !important;">{{Salary}}</th>
-                                                                                 
+                                 <th colspan="8" scope="col" style="text-align: right; border: 1px solid #dfe2e5 !important;"><b>Total</b></th>
+                                 <th colspan="1" scope="col" style="text-align: center; border: 1px solid #dfe2e5 !important;"><b>{{Salary}}</b></th>                                               
                               </tr>
                               </tfoot>
                            </table>

@@ -48,6 +48,7 @@ import { CostListComponent } from './cost/cost-list/cost-list.component';
 import { NgSelect2Module } from 'ng-select2';
 import { CommonModule } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -102,6 +103,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
       preventDuplicates: true,
     }),
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,

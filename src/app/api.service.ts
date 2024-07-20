@@ -118,6 +118,23 @@ export class ApiService {
       );
   }
 
+  AdminGetSalarySaveEmpWise(empid: number,  month: string) {
+    var APIURL = this.baseURL+ 'AdminGetSalarySaveEmpWise';
+    debugger;
+    const formData = new FormData();
+    formData.append('empid', empid.toString());
+    formData.append('month', month.toString());
+    debugger;
+    return this.httpClient.post(APIURL, formData).
+      pipe(
+        map((data: any) => {
+          return data;
+        }), catchError(error => {
+          return throwError('Something went wrong!');
+        })
+      );
+  }
+
 
   AdminAddEmp(emp_fristname: string, emp_lastname: string, emp_email: string,emp_adress: string,emp_contact: string,emp_secondcontact: string,emp_designation: string,emp_position: string,emp_password: string,emp_status: string,emp_image: any,emp_resume: any) {
     var APIURL = this.baseURL+ 'AdminAddEmp';
