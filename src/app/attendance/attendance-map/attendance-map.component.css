@@ -3,3 +3,11 @@
     padding: 5px 20px;
     background: #c0c0c04d;
 }
+
+
+
+.map-frame {
+    border: 1px solid #000; /* Change the color and width as needed */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+  }
+  

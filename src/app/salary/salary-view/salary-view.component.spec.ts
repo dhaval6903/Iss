@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SalaryAddComponent } from './salary-add.component';
+import { SalaryViewComponent } from './salary-view.component';
 
-describe('SalaryAddComponent', () => {
-  let component: SalaryAddComponent;
-  let fixture: ComponentFixture<SalaryAddComponent>;
+describe('SalaryViewComponent', () => {
+  let component: SalaryViewComponent;
+  let fixture: ComponentFixture<SalaryViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SalaryAddComponent]
+      declarations: [SalaryViewComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SalaryAddComponent);
+    fixture = TestBed.createComponent(SalaryViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

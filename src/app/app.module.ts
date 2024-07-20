@@ -16,8 +16,8 @@ import { AttendanceEditComponent } from './attendance/attendance-edit/attendance
 import { AttendanceMapComponent } from './attendance/attendance-map/attendance-map.component';
 import { ClientAddComponent } from './client/client-add/client-add.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
-import { SalaryAddComponent } from './salary/salary-add/salary-add.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
+import { SalaryViewComponent } from './salary/salary-view/salary-view.component';
 import { TaskAddComponent } from './task/task-add/task-add.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { TaskUpdateComponent } from './task/task-update/task-update.component';
@@ -50,6 +50,7 @@ import { CommonModule } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 
+
 // import { DoubleScrollComponent } from 'mindgaze-doublescroll';
 // import 'mindgaze-doublescroll';
 
@@ -69,8 +70,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AttendanceViewComponent,
     ClientAddComponent,
     ClientListComponent,
-    SalaryAddComponent,
-    SalaryListComponent,
+    SalaryListComponent,    
+    SalaryViewComponent,
     TaskAddComponent,
     TaskListComponent,
     TaskUpdateComponent,

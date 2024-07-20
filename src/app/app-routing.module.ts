@@ -39,8 +39,9 @@ import { AttendanceMapComponent } from './attendance/attendance-map/attendance-m
 import { ClientAddComponent } from './client/client-add/client-add.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 
-import { SalaryAddComponent } from './salary/salary-add/salary-add.component';
+
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
+import { SalaryViewComponent } from './salary/salary-view/salary-view.component';
 
 import { TaskAddComponent } from './task/task-add/task-add.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
@@ -99,8 +100,8 @@ const routes: Routes = [
   { path: 'client/client-edit/:id', component: ClientAddComponent },
 
   { path: 'salary/salary-list', component: SalaryListComponent },
-  { path: 'salary/salary-add/:id', component: SalaryAddComponent },
-  { path: 'salary/salary-edit/:id', component: SalaryAddComponent },
+  { path: 'salary/salary-view', component: SalaryViewComponent },
+  
 
 
   { path: 'task/task-list', component: TaskListComponent },
