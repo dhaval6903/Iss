@@ -8,7 +8,7 @@
                   <div class="white_card_header">
                      <div class="d-flex justify-content-between align-items-center" >
                         <div class="main-title">
-                           <h5>Generate Salary</h5>
+                           <h5>Salary Details</h5>
                         </div>
                      </div>
                      <div class="row mt-3" >
@@ -17,27 +17,31 @@
                            <label for="user" class="form-label">Employee</label>
                            <select class="form-control" id="Emp" name="Emp" [(ngModel)]="AllEmp">
                                <option value="0" selected>--- Select Employee ---</option>
-                               <option value="all">All Employees</option>
+                               <option value="0">All Employees</option>
                                <option *ngFor="let row of EmpBind" [value]="row.emp_id">{{ row.emp_fristname }} {{ row.emp_lastname }}</option>
                            </select>
                         </div>
                         <div class="col-md-4">
                            <label class="form-label" for="inputProject">Month</label>
                            <select class="form-control" [(ngModel)]="month" name="month">
-                               <option value="" selected>--- Select Month ---</option>
+                               <option value="" selected>--- Select Months ---</option>
+                               <option value="">All Month</option>
                                <option *ngFor="let row of MonthData" [value]="row.monthYear">{{ row.monthYear }}</option>
                            </select>
                         </div>
-                        <div class="col-md-4 d-flex align-items-end" style="justify-content: space-between;">
-                           <div>
-                             <button class="btn btn-primary me-2" (click)="SearchData()" [disabled]="!isSearchButtonEnabled() || isButtonsDisabled" title="search Data">
+                        <div class="col-md-4 d-flex align-items-end" >
+                        
+                          <!--   <button class="btn btn-primary me-2" (click)="SearchData()" [disabled]="!isSearchButtonEnabled() || isButtonsDisabled" title="search Data">
                                <i class="ti-search"></i>
-                             </button>
+                             </button>-->
+                             <button class="btn btn-primary me-2" (click)="SearchData()" title="search Data">
+                              <i class="ti-search"></i>
+                            </button>
                              <button *ngIf="dateChanged && showTable" class="btn btn-warning me-2" (click)="clearData()" [disabled]="isButtonsDisabled" title="Clear Data">
                                <i class="ti-reload"></i>
                              </button>
-                           </div>
-                           <button *ngIf="showTable" class="btn btn-info me-2" (click)="saveSalary()" title="Save Salary">Save</button>
+                          
+                       
                          </div>
                          
                      </div>
@@ -48,6 +52,7 @@
                            <table class="table" id="table_data">
                               <thead>
                                  <tr>
+                                   
                                     <th scope="col">Action</th>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Total Days</th>
@@ -57,33 +62,38 @@
                                     <th scope="col">Half Day</th>
                                     <th scope="col">Pay Days</th>
                                     <th scope="col">Salary(₹)</th>
+                                    <th scope="col">Remark</th>
                                  </tr>
                               </thead>
                               <tbody>
                                  <!-- Placeholder data for now, replace with actual data -->
-                                 <tr *ngFor="let row of BindData;" >
+                                 <tr *ngFor="let row of BindData;">
                                     <td>
-                                     <div class="btn-group">
-                                       <button type="button" title="View" class="btn btn-success btn-sm me-2" (click)="View(row.att_empid,row.att_monthyear)">
-                                          <i class="ti-eye"></i>
-                                        </button>
-                                           
-                                       </div>
-                                   </td>
-                                   <td>{{row.emp_fristname}} {{row.emp_lastname}} <br/><span  class="badge bg-primary">{{row.emp_contact}}</span></td>
-                                   <td>{{row.TotalDays}}</td>
-                                   <td>{{ row.PresentDay }}</td>
-                                   <td>{{ row.AbsentDay }}</td>
-                                   <td>{{ row.LeaveDay }}</td>
-                                   <td>{{ row.HalfDay }}</td>
-                                   <td>{{ row.PayDays }}</td>
-                                   <td><strong>{{ row.Salary }}</strong></td>
-                                 </tr>
+                                       <div class="btn-group">
+                                         <button type="button" title="View" class="btn btn-success btn-sm me-2" (click)="View(row.sa_empid,row.sa_monthYear)">
+                                            <i class="ti-eye"></i>
+                                          </button>
+                                           <button type="button" title="Pay" class="btn btn-danger btn-sm me-2" (click)="Pay(row.sa_empid,row.sa_monthYear)">
+                                             <i class="fas fa-rupee-sign"></i>
+                                           </button>
+                                             
+                                         </div>
+                                     </td>
+                                    <td>{{row.sa_fullname}}<br/><span  class="badge bg-primary">{{row.sa_contact}}</span></td>
+                                    <td>{{row.sa_totalDays}}</td>
+                                    <td>{{ row.sa_presentDays }}</td>
+                                    <td>{{ row.sa_absentDays }}</td>
+                                    <td>{{ row.sa_leaveDays }}</td>
+                                    <td>{{ row.sa_halfDays }}</td>
+                                    <td>{{ row.sa_payDays }}</td>
+                                    <td><strong>{{ row.sa_paySalary }}</strong></td>
+                                    <td><strong>{{ row.sa_remark }}</strong></td>
+                                  </tr>
                                  <tr *ngIf="NodataLable">
-                                    <td colspan="9"><span class="NodataLable">No any data</span></td>
+                                    <td colspan="10"><span class="NodataLable">No any data</span></td>
                                  </tr>
                                  <tr *ngIf="LoaderShow">
-                                    <td colspan="9">
+                                    <td colspan="10">
                                        <div class="loader--spinner theme_loder_1 mb_30">
                                           <div></div> <div></div> <div></div>
                                           <div></div> <div></div> <div></div>
@@ -95,9 +105,10 @@
                               </tbody>
                               <tfoot>
                                  <tr>
-                                 <th colspan="8" scope="col" style="text-align: right; border: 1px solid #dfe2e5 !important;"><b>Total</b></th>
-                                 <th colspan="1" scope="col" style="text-align: center; border: 1px solid #dfe2e5 !important;"><b>{{Salary}}</b></th>                                               
-                              </tr>
+                                    <th colspan="8" scope="col" style="text-align: right; border: 1px solid #dfe2e5 !important;"><b>Total</b></th>
+                                    <th colspan="1" scope="col" style="text-align: center; border: 1px solid #dfe2e5 !important;"><b>{{sa_paySalary}}</b></th>
+                                    <th colspan="1" scope="col" style="text-align: center; border: 1px solid #dfe2e5 !important;"></th>
+                                 </tr>
                               </tfoot>
                            </table>
                         </div>

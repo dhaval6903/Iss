@@ -42,6 +42,8 @@ import { ClientListComponent } from './client/client-list/client-list.component'
 
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { SalaryViewComponent } from './salary/salary-view/salary-view.component';
+import { GsalaryListComponent } from './salary/gsalary-list/gsalary-list.component';
+import { GsalaryPayComponent } from './salary/gsalary-pay/gsalary-pay.component';
 
 import { TaskAddComponent } from './task/task-add/task-add.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
@@ -101,8 +103,10 @@ const routes: Routes = [
 
   { path: 'salary/salary-list', component: SalaryListComponent },
   { path: 'salary/salary-view', component: SalaryViewComponent },
+  { path: 'salary/gsalary-pay', component: GsalaryPayComponent },
+  { path: 'salary/gsalary-list', component: GsalaryListComponent },
   
-
+  
 
   { path: 'task/task-list', component: TaskListComponent },
   { path: 'task/task-add/:id', component: TaskAddComponent },

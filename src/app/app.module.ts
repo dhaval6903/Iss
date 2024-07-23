@@ -18,6 +18,8 @@ import { ClientAddComponent } from './client/client-add/client-add.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { SalaryListComponent } from './salary/salary-list/salary-list.component';
 import { SalaryViewComponent } from './salary/salary-view/salary-view.component';
+import { GsalaryPayComponent } from './salary/gsalary-pay/gsalary-pay.component';
+import { GsalaryListComponent } from './salary/gsalary-list/gsalary-list.component';
 import { TaskAddComponent } from './task/task-add/task-add.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { TaskUpdateComponent } from './task/task-update/task-update.component';
@@ -52,6 +54,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+
+
 // import { DoubleScrollComponent } from 'mindgaze-doublescroll';
 // import 'mindgaze-doublescroll';
 
@@ -73,6 +77,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClientListComponent,
     SalaryListComponent,    
     SalaryViewComponent,
+    GsalaryListComponent,
+    GsalaryPayComponent,
     TaskAddComponent,
     TaskListComponent,
     TaskUpdateComponent,
@@ -94,6 +100,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CostListComponent,
     AttendanceEditComponent,
     AttendanceMapComponent
+    
+    
 
   ],
   imports: [
